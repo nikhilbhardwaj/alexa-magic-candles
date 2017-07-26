@@ -1,7 +1,17 @@
 package in.nikhilbhardwaj.candles.alexa.speech;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class HumanReadableTextGenerator {
 
+    public static final String [] RESPONSES = {
+            "Ok",
+            "You got it",
+            "Gotcha",
+            "Alright",
+            "Thy will be done",
+            "As you wish"
+    };
 
     public String repromptResponse() {
         return "I am sorry, I didn't catch that. Try again or ask me for help.";
@@ -16,7 +26,7 @@ public class HumanReadableTextGenerator {
     }
 
     public String response() {
-        return "You got it!";
+        return RESPONSES[ThreadLocalRandom.current().nextInt(RESPONSES.length)];
     }
 
 }
